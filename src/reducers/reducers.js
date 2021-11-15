@@ -1,14 +1,17 @@
-import { ITEM } from '../types/types';
+import { USER } from '../types/types';
 
-const reducer = (state, action) => {
+const INITIAL_STATE = {
+  users: [],
+};
+
+const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case ITEM:
+    case USER: {
       return {
         ...state,
-        item: action.payload,
-        loading: false,
-        error: '',
+        user: action.payload,
       };
+    }
     default: return state;
   }
 };
